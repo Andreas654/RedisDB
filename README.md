@@ -20,6 +20,27 @@ Oder alternativ direkt zum Redis-Service:
 redis-cli -h redis ping
 ```
 
+## Fehlerbehebung
+
+Falls `redis-cli` eine Fehlermeldung "Could not connect to Redis at 127.0.0.1:6379: Connection refused" anzeigt:
+
+1. **Überprüfe, ob der Port-Forwarding-Tunnel läuft:**
+   ```bash
+   pgrep -f "socat TCP-LISTEN:6379"
+   ```
+
+2. **Starte den Tunnel manuell neu:**
+   ```bash
+   bash /workspaces/RedisDB/.devcontainer/start-redis-tunnel.sh
+   ```
+
+3. **Alternativ kannst du direkt zum Redis-Service verbinden:**
+   ```bash
+   redis-cli -h redis ping
+   ```
+
+Der Tunnel sollte automatisch beim Start des Devcontainers eingerichtet werden. Falls nicht, wird er beim ersten Öffnen eines Terminals gestartet.
+
 Dateien:
 
 - [/.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
