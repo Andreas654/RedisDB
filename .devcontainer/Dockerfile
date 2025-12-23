@@ -1,3 +1,3 @@
-FROM mcr.microsoft.com/devcontainers/base:0-bullseye
+FROM mcr.microsoft.com/devcontainers/base:alpine
 
 RUN apk add --no-cache redis
