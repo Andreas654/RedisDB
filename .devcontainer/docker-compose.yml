@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  dev:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    depends_on:
+      - redis
+    networks:
+      - devnet
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - devnet
+
+volumes:
+  redis-data:
+
+networks:
+  devnet:
