@@ -10,17 +10,7 @@ Schnellstart:
 - Der Redis-Server startet automatisch und ist unter Port `6379` verfügbar.
 - Verbinde dich im Workspace mit dem Redis-CLI:
 
-```bash
-redis-cli ping
-```
-
-Oder alternativ direkt zum Redis-Service:
-
-```bash
-redis-cli -h redis ping
-```
-
-Oder alternativ direkter Start der CLI von Redis
+direkter Start der CLI von Redis
 
 ```bash
 redis-cli
