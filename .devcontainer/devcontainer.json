@@ -5,7 +5,7 @@
   "workspaceFolder": "/workspaces/RedisDB",
   "shutdownAction": "stopCompose",
   "postCreateCommand": "echo 'Redis wird konfiguriert...' || true",
-  "postStartCommand": "bash -c 'until redis-cli -h redis ping > /dev/null 2>&1; do echo \"Warte auf Redis...\"; sleep 1; done && echo \"Redis ist bereit!\" && nohup socat TCP-LISTEN:6379,fork,reuseaddr TCP:redis:6379 > /tmp/socat.log 2>&1 &'",
+  "postStartCommand": "bash -c 'RETRIES=30; while [ $RETRIES -gt 0 ]; do redis-cli -h redis ping > /dev/null 2>&1 && break || echo \"Warte auf Redis... ($RETRIES Versuche übrig)\"; RETRIES=$((RETRIES-1)); sleep 2; done; if [ $RETRIES -eq 0 ]; then echo \"WARNUNG: Redis nicht erreichbar nach 60 Sekunden!\"; else echo \"Redis ist bereit!\"; nohup socat TCP-LISTEN:6379,fork,reuseaddr TCP:redis:6379 > /tmp/socat.log 2>&1 &; fi'",
   "forwardPorts": [6379],
   "customizations": {
     "vscode": {
