@@ -1,0 +1,10 @@
+{
+  "name": "Mein Redis Projekt",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/redis:1": {
+      "version": "latest",
+      "autostart": true
+    }
+  }
+}
