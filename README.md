@@ -7,10 +7,16 @@ Dieses Repository enthält eine Devcontainer-Definition, die einen Workspace-Con
 Schnellstart:
 
 - Öffne den Codespace (oder starte den Devcontainer lokal).
-- Der Redis-Server ist unter Port `6379` verfügbar und weitergeleitet.
+- Der Redis-Server startet automatisch und ist unter Port `6379` verfügbar.
 - Verbinde dich im Workspace mit dem Redis-CLI:
 
+```bash
+redis-cli ping
 ```
+
+Oder alternativ direkt zum Redis-Service:
+
+```bash
 redis-cli -h redis ping
 ```
 

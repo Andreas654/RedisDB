@@ -8,7 +8,8 @@ services:
       - ..:/workspaces/RedisDB:cached
     command: sleep infinity
     depends_on:
-      - redis
+      redis:
+        condition: service_healthy
     networks:
       - devnet
   redis:
@@ -19,6 +20,11 @@ services:
       - redis-data:/data
     networks:
       - devnet
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
 
 volumes:
   redis-data:
