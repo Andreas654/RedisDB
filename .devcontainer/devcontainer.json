@@ -5,6 +5,15 @@
   "workspaceFolder": "/workspace",
   "shutdownAction": "stopCompose",
   "postCreateCommand": "echo 'Redis CLI verfügbar: redis-cli -h redis' || true",
+  "forwardPorts": [6379]
+}
+{
+  "name": "Redis Codespace",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "echo 'Redis CLI verfügbar: redis-cli -h redis' || true",
   "forwardPorts": [6379],
   "features": {
     "ghcr.io/devcontainers/features/redis:1": {
