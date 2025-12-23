@@ -1,9 +1,19 @@
 {
   "name": "Redis Codespace",
-  "dockerComposeFile": ["docker-compose.yml"],
+  "dockerComposeFile": "docker-compose.yml",
   "service": "dev",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceFolder": "/workspaces/RedisDB",
   "shutdownAction": "stopCompose",
   "postCreateCommand": "echo 'Redis CLI verfügbar: redis-cli -h redis' || true",
-  "forwardPorts": [6379]
+  "forwardPorts": [6379],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "cweijan.vscode-redis-client"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
 }

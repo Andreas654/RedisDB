@@ -5,7 +5,8 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
     volumes:
-      - ..:/workspaces:cached
+      - ..:/workspaces/RedisDB:cached
+    command: sleep infinity
     depends_on:
       - redis
     networks:
