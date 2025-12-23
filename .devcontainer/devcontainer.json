@@ -5,11 +5,7 @@
   "workspaceFolder": "/workspace",
   "shutdownAction": "stopCompose",
   "postCreateCommand": "echo 'Redis CLI verfügbar: redis-cli -h redis' || true",
-  "forwardPorts": [6379]
-}
-{
-  "name": "Mein Redis Projekt",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "forwardPorts": [6379],
   "features": {
     "ghcr.io/devcontainers/features/redis:1": {
       "version": "latest",
