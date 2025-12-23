@@ -20,6 +20,13 @@ Oder alternativ direkt zum Redis-Service:
 redis-cli -h redis ping
 ```
 
+Oder alternativ direkter Start der CLI von Redis
+
+```bash
+redis-cli
+```
+
+
 ## Fehlerbehebung
 
 Falls `redis-cli` eine Fehlermeldung "Could not connect to Redis at 127.0.0.1:6379: Connection refused" anzeigt:
