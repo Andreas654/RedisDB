@@ -2,7 +2,7 @@
   "name": "Redis Codespace",
   "dockerComposeFile": ["docker-compose.yml"],
   "service": "dev",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "shutdownAction": "stopCompose",
   "postCreateCommand": "echo 'Redis CLI verfügbar: redis-cli -h redis' || true",
   "forwardPorts": [6379]
