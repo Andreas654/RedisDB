@@ -5,5 +5,5 @@
   "workspaceFolder": "/workspace",
   "shutdownAction": "stopCompose",
   "postCreateCommand": "echo 'Redis CLI verfügbar: redis-cli -h redis' || true",
-  "forwardPorts": [6379],
+  "forwardPorts": [6379]
 }
