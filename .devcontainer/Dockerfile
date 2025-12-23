@@ -1,11 +1,12 @@
 FROM mcr.microsoft.com/devcontainers/base:bookworm
 
-# Installiere nur Redis CLI-Tools, kein Server (der läuft separat in Docker Compose)
+# Installiere nur Redis CLI-Tools und socat für Port-Forwarding
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         wget \
         gnupg \
-        ca-certificates && \
+        ca-certificates \
+        socat && \
     wget -qO - https://packages.redis.io/gpg | gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg && \
     echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb bookworm main" | tee /etc/apt/sources.list.d/redis.list && \
     apt-get update && \

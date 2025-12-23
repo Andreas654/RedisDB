@@ -4,7 +4,8 @@
   "service": "dev",
   "workspaceFolder": "/workspaces/RedisDB",
   "shutdownAction": "stopCompose",
-  "postCreateCommand": "echo 'Redis CLI verfügbar: redis-cli -h redis' || true",
+  "postCreateCommand": "echo 'Redis ist verfügbar. Verwende: redis-cli -h redis' || true",
+  "postStartCommand": "nohup socat TCP-LISTEN:6379,fork,reuseaddr TCP:redis:6379 > /tmp/socat.log 2>&1 &",
   "forwardPorts": [6379],
   "customizations": {
     "vscode": {
